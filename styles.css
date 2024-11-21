@@ -1,0 +1,138 @@
+/* Styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth; /* Smooth scroll entre les sections */
+}
+
+/* Barre de navigation */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+}
+
+.navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+    color: #f0a500;
+}
+
+/* Section d'accueil */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('img/image.png');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Légère superposition pour améliorer la lisibilité */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeInDown 1.5s ease-out;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Image ronde */
+.round-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.round-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Section de présentation */
+.about-section {
+    padding: 5rem 2rem;
+    background: #f7f7f7;
+    text-align: center;
+    transition: all 0.5s ease;
+    transform: translateY(50px);
+    opacity: 0;
+    animation: slideIn 1s forwards;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    color: #f0a500;
+    margin-bottom: 1rem;
+}
+
+.about-section p {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+/* Effet d'apparition avec l'animation */
+@keyframes slideIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
