@@ -5,23 +5,52 @@
     box-sizing: border-box;
 }
 
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Pour garantir que l'image occupe tout l'espace */
+    overflow-x: hidden; /* Évite les défilements horizontaux */
+}
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     scroll-behavior: smooth; /* Smooth scroll entre les sections */
+
+    background-color: #f4f1eb; /* Beige clair */
+    color: #333333; /* Gris anthracite pour le texte */
 }
 
 /* Barre de navigation */
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* Sépare les éléments gauche/droite */
     padding: 1rem 2rem;
-    background-color: #333;
+    background: transparent; /* Rendu complètement transparent */
     color: #fff;
-    position: sticky;
+    position: absolute;
     top: 0;
+    width: 100%; /* Prend toute la largeur */
     z-index: 10;
+    box-shadow: none;
+    border-bottom: none;
+    transition: background 0.3s ease; /* Permet d'ajouter un effet si tu veux modifier */
+}
+
+.navbar.transparent {
+    background-color: rgb(102, 95, 95); /* Fond transparent (ajuste la couleur et opacité selon tes besoins) */
+    box-shadow: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Texte de la navbar */
+.navbar-logo a {
+    color: #ffffff; 
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: 600;
 }
 
 .navbar-links {
@@ -31,28 +60,70 @@ body {
 
 .navbar-links a {
     color: #fff;
-    text-decoration: none;
+    text-decoration: none; /* Pas de soulignement par défaut */
     margin-left: 1.5rem;
-    transition: color 0.3s;
+    font-weight: 400;
+    font-size: 1rem;
+    position: relative; /* Nécessaire pour placer la ligne en pseudo-élément */
+    transition: color 0.3s ease; /* Animation de couleur */
+}
+
+.navbar-links a.active {
+    color: #f0a500; /* Accentuation de la couleur */
+    font-weight: bold; /* Optionnel : pour renforcer l'accent */
+    position: relative; /* Nécessaire pour le soulignement */
+}
+
+.navbar-links a.active::after {
+    content: ""; 
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: #f0a500;
 }
 
 .navbar-links a:hover {
-    color: #f0a500;
+    color: #f0a500; /* Accentuation au survol */
+}
+
+.navbar-links a::after {
+    content: ""; /* Crée une ligne en pseudo-élément */
+    position: absolute;
+    left: 0;
+    bottom: -3px; /* Place la ligne sous le texte */
+    width: 0;
+    height: 2px; /* Épaisseur de la ligne */
+    background-color: #f0a500; /* Couleur de la ligne */
+    transition: width 0.3s ease; /* Animation fluide */
+}
+
+.navbar-links a:hover::after {
+    width: 100%; /* La ligne s'étend sur toute la largeur */
+}
+
+/* Icône de menu (pour mobile) */
+.menu-toggle {
+    display: none;
+}
+
+.navbar-icon {
+    display: none;
 }
 
 /* Section d'accueil */
 .hero-section {
     display: flex;
+    justify-content: space-between; /* Texte à gauche, portrait à droite */
     align-items: center;
-    justify-content: center;
     height: 100vh;
-    background-image: url('img/background_accueil.jpg');
+    background-image: url('img/image.jpg'); /* Image de fond */
     background-size: cover;
     background-position: center;
-    color: #fff;
-    text-align: center;
     position: relative;
-    overflow: hidden;
+    color: #fff;
+    padding: 0 5%; /* Espacement à gauche et à droite */
 }
 
 .hero-section::before {
@@ -66,10 +137,37 @@ body {
     z-index: 1;
 }
 
+/* Texte de la section */
 .hero-content {
-    position: relative;
+    max-width: 50%; /* Limite la largeur du texte */
     z-index: 2;
     animation: fadeInDown 1.5s ease-out;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* Conteneur du portrait */
+.portrait-container {
+    position: relative;
+    max-width: 300px; /* Largeur maximale pour le portrait */
+    z-index: 2;
+}
+
+.portrait {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #d5d5d5; /* Couleur d'accent */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes fadeInDown {
@@ -99,34 +197,94 @@ body {
 
 /* Section de présentation */
 .about-section {
-    padding: 5rem 2rem;
-    background: #f7f7f7;
+    padding: 6rem 2rem; /* Plus de padding pour aérer */
+    background: linear-gradient(135deg, #f7f7f7, #e1e1e1); /* Un joli fond dégradé */
     text-align: center;
-    transition: all 0.5s ease;
-    transform: translateY(50px);
-    opacity: 0;
-    animation: slideIn 1s forwards;
+    position: relative;
+    z-index: 1;
 }
 
+.about-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.05); /* Légère superposition pour un effet subtil */
+    z-index: -1;
+}
+
+/* Retirer l'animation */
 .about-content {
-    max-width: 800px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 2rem;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    /* Retirer la classe .animate et les animations */
+    text-align: left;
 }
 
 .about-section h2 {
     font-size: 2.5rem;
+    font-weight: bold;
     color: #f0a500;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
 .about-section p {
-    color: #555;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.about-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.about-content ul li {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 0.8rem;
+}
+
+.about-content .cta-btn {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background-color: #f0a500;
+    color: #fff;
     font-size: 1.1rem;
-    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.about-content .cta-btn:hover {
+    background-color: #d48700;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Effet d'apparition avec l'animation */
@@ -134,5 +292,58 @@ body {
     to {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+/* Responsive (mobile) */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: rgba(0, 0, 0, 0.9); /* Fond plus sombre pour mobile */
+    }
+
+    .navbar-links li {
+        margin: 1rem 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar-icon {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .navbar-icon span {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 4px;
+    }
+
+    /* Afficher les liens lorsque la case est cochée */
+    .menu-toggle:checked + .navbar-icon + .navbar-links {
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section h2 {
+        font-size: 2rem;
+    }
+
+    .about-content {
+        padding: 1.5rem 2rem;
+    }
+
+    .about-section p {
+        font-size: 1.1rem;
     }
 }
