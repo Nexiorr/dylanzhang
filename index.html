@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Dylan Zhang</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
 </head>
 <body>
     <!-- Barre de navigation -->
@@ -21,9 +23,9 @@
         <ul class="navbar-links">
             <li><a href="#home">Accueil</a></li>
             <li><a href="#about">À propos</a></li>
-            <li><a href="#projects">Projets</a></li>
+            <li><a href="#projets">Projets</a></li>
             <li><a href="#skills">Compétences</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
@@ -56,14 +58,109 @@
             </p>
             <button class="cta-btn">Contactez-moi</button>
         </div>
-    </section>
+    </section> 
 
-    <section id="projects" style="height: 100vh;">Projets Section</section>
-    <section id="skills" style="height: 100vh;">Compétences Section</section>
-    <section id="contact" style="height: 100vh;">Contact Section</section>
+    <section id="projets" class="project-section">
+        <h2>MES PROJETS</h2>
+    
+        <div class="project-container">
+            <!-- Projet 1 -->
+            <div class="project-card">
+                <img src="img/projetTrajet1.png" alt="FlyingDustries">
+                <div class="project-details">
+                    <h3>FlyingDustries</h3>
+                    <p>
+                        FlyingDustries est une application codée principalement en java avec l'API javaFX pour gérer l'interface utilisateur / machine. 
+                        Cette application utilise l'algorithme de Dijkstra pour calculer le chemin le plus court selon le choix de l'utilisateur.
+                    </p>
+                    <div class="project-links">
+                        <a href="#"><i class="fas fa-globe"></i></a>
+                        <a href="https://github.com/Nexiorr/FlyingDustries"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Projet 2 -->
+            <div class="project-card">
+                <img src="img/knn.png" alt="knn-projet">
+                <div class="project-details">
+                    <h3>Application de classification</h3>
+                    <p>
+                        ddozdkzqdpqzd
+                    </p>
+                    <div class="project-links">
+                        <a href="#"><i class="fas fa-globe"></i></a>
+                        <a href="https://github.com/Nexiorr/Classification-knn"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Projet 3 -->
+            <div class="project-card">
+                <img src="img/NerdFactory.png" alt="NerdFactory">
+                <div class="project-details">
+                    <h3>NerdFactory</h3>
+                    <p>
+                        NerdFactory est un projet de réalisation d'un jeu simple sur terminal réalisé sous 3 jours dans une équipe utilisant la méthodolie Agile.
+                    </p>
+                    <div class="project-links">
+                        <a href="#"><i class="fas fa-globe"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+
+    <section class="skills-section" id="skills">
+        <h2>Mes Compétences</h2>
+        <div class="skills-container">
+            <div class="skills-category">
+                <h3>Hard Skills</h3>
+                <div class="skills-list">
+                    <div class="skill-card">
+                        <img src="img/html.png" alt="HTML5" class="skill-icon">
+                        <img src="img/css.png" alt="HTML5" class="skill-icon">
+                    </div>
+                    <div class="skill-card">
+                        <img src="img/java.png" alt="Java" class="skill-icon">
+                        <img src="img/javaEE.png" alt="Java" class="skill-icon">
+                    </div>
+                    <div class="skill-card">
+                        <img src="img/postgresql2.png" alt="PostgreSQL" class="skill-icon large-icon">
+                    </div>
+                    <div class="skill-card">
+                        <img src="img/gitlab2.png" alt="Git" class="skill-icon">
+                    </div>
+                </div>
+            </div>
+        <h3>Soft-skills</h3>
+    </section>
+    <footer class="footer-section">
+        <div class="footer-content">
+            <h3>Merci de votre visite !</h3>
+            <p>Vous pouvez me contacter via mes réseaux sociaux ou m'envoyer un email.</p>
+    
+            <!-- Liens vers les réseaux sociaux -->
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/votreprofil" target="_blank" class="social-icon">
+                    <img src="img/linkedin2.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/votreprofil" target="_blank" class="social-icon">
+                    <img src="img/gitlab2.png" alt="GitHub">
+                </a>
+                <a href="mailto:votremail@example.com" class="social-icon">
+                    <img src="img/mail.png" alt="Email">
+                </a>
+            </div>
+        </div>
 
     <script src="script.js"></script>
     <script src="script2.js"></script>
     <script src="script2.js"></script>
+    <script src="caroussel.js"></script>
 </body>
 </html>
