@@ -1,4 +1,3 @@
-/* Styles de base */
 * {
     margin: 0;
     padding: 0;
@@ -10,48 +9,47 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%; /* Pour garantir que l'image occupe tout l'espace */
-    overflow-x: hidden; /* Évite les défilements horizontaux */
+    height: 100%;
+    overflow-x: hidden;
 }
 
 body, .navbar, .hero-section, .about-section, .project-section, .skills-section, .footer-section {
-    background-color: #F9F7F7; /* Blanc cassé harmonisé */
+    background-color: #F9F7F7;
 }
 
 
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    scroll-behavior: smooth; /* Smooth scroll entre les sections */
+    scroll-behavior: smooth;
 
-    background-color: #f4f1eb; /* Beige clair */
-    color: #333333; /* Gris anthracite pour le texte */
+    background-color: #f4f1eb;
+    color: #333333;
 }
 
-/* Barre de navigation */
+
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Sépare les éléments gauche/droite */
+    justify-content: space-between;
     padding: 1rem 2rem;
-    background: transparent; /* Rendu complètement transparent */
+    background: transparent;
     color: #fff;
     position: absolute;
     top: 0;
-    width: 100%; /* Prend toute la largeur */
+    width: 100%;
     z-index: 10;
     box-shadow: none;
     border-bottom: none;
-    transition: background 0.3s ease; /* Permet d'ajouter un effet si tu veux modifier */
+    transition: background 0.3s ease;
 }
 
 .navbar.transparent {
-    background-color: #444; /* Fond transparent (ajuste la couleur et opacité selon tes besoins) */
+    background-color: #444;
     box-shadow: none;
     transition: background-color 0.3s ease;
 }
 
-/* Texte de la navbar */
 .navbar-logo a {
     color: #ffffff; 
     font-size: 1.5rem;
@@ -66,18 +64,18 @@ body {
 
 .navbar-links a {
     color: #fff;
-    text-decoration: none; /* Pas de soulignement par défaut */
+    text-decoration: none;
     margin-left: 1.5rem;
     font-weight: 400;
     font-size: 1rem;
-    position: relative; /* Nécessaire pour placer la ligne en pseudo-élément */
-    transition: color 0.3s ease; /* Animation de couleur */
+    position: relative;
+    transition: color 0.3s ease;
 }
 
 .navbar-links a.active {
-    color: #f0a500; /* Accentuation de la couleur */
-    font-weight: bold; /* Optionnel : pour renforcer l'accent */
-    position: relative; /* Nécessaire pour le soulignement */
+    color: #f0a500;
+    font-weight: bold;
+    position: relative;
 }
 
 .navbar-links a.active::after {
@@ -91,25 +89,24 @@ body {
 }
 
 .navbar-links a:hover {
-    color: #f0a500; /* Accentuation au survol */
+    color: #f0a500;
 }
 
 .navbar-links a::after {
-    content: ""; /* Crée une ligne en pseudo-élément */
+    content: "";
     position: absolute;
     left: 0;
-    bottom: -3px; /* Place la ligne sous le texte */
+    bottom: -3px;
     width: 0;
-    height: 2px; /* Épaisseur de la ligne */
-    background-color: #f0a500; /* Couleur de la ligne */
-    transition: width 0.3s ease; /* Animation fluide */
+    height: 2px;
+    background-color: #f0a500;
+    transition: width 0.3s ease;
 }
 
 .navbar-links a:hover::after {
-    width: 100%; /* La ligne s'étend sur toute la largeur */
+    width: 100%;
 }
 
-/* Icône de menu (pour mobile) */
 .menu-toggle {
     display: none;
 }
@@ -118,18 +115,17 @@ body {
     display: none;
 }
 
-/* Section d'accueil */
 .hero-section {
     display: flex;
-    justify-content: space-between; /* Texte à gauche, portrait à droite */
+    justify-content: space-between;
     align-items: center;
     height: 100vh;
-    background-image: url('img/image.jpg'); /* Image de fond */
+    background-image: url('img/image.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
     color: #fff;
-    padding: 0 5%; /* Espacement à gauche et à droite */
+    padding: 0 5%;
 }
 
 .hero-section::before {
@@ -139,13 +135,13 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Légère superposition pour améliorer la lisibilité */
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
-/* Texte de la section */
+
 .hero-content {
-    max-width: 50%; /* Limite la largeur du texte */
+    max-width: 50%;
     z-index: 2;
     animation: fadeInDown 1.5s ease-out;
 }
@@ -161,10 +157,10 @@ body {
     opacity: 0.8;
 }
 
-/* Conteneur du portrait */
+
 .portrait-container {
     position: relative;
-    max-width: 300px; /* Largeur maximale pour le portrait */
+    max-width: 300px;
     z-index: 2;
 }
 
@@ -172,7 +168,7 @@ body {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    border: 5px solid #d5d5d5; /* Couleur d'accent */
+    border: 5px solid #d5d5d5;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -187,7 +183,6 @@ body {
     }
 }
 
-/* Image ronde */
 .round-image {
     width: 150px;
     height: 150px;
@@ -201,14 +196,16 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Section de présentation */
+
 .about-section {
-    padding: 6rem 2rem; /* Plus de padding pour aérer */
-    background: linear-gradient(135deg, #fff8f0, #f9e6d2); /* Dégradé blanc cassé / beige clair */
+    height: 100vh;
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #fff8f0, #f9e6d2);
     text-align: center;
     position: relative;
     z-index: 1;
     color: #333;
+
 }
 
 .about-section::before {
@@ -218,16 +215,22 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.05); /* Légère superposition pour un effet subtil */
+    background: rgba(0, 0, 0, 0.05); 
     z-index: -1;
 }
 
-/* Retirer l'animation */
 .about-content {
-    text-align: left;
+    text-align: justify;
+    line-height: 1.8;
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 20px;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
 }
 
 .about-section h2 {
+    text-align: center;
     font-size: 2.5rem;
     font-weight: bold;
     color: #f0a500;
@@ -275,6 +278,7 @@ body {
     background: #fff8f0;
     padding: 4rem 2rem;
     text-align: center;
+    height: 160vh;
 }
 
 .skills-section h2 {
@@ -291,7 +295,6 @@ body {
     gap: 2rem;
 }
 
-/* Catégories (Hard Skills / Soft Skills) */
 .skills-category h3 {
     font-size: 2rem;
     color: #333;
@@ -299,7 +302,84 @@ body {
     text-transform: uppercase;
 }
 
-/* Liste des compétences */
+.soft-skills h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+/* Soft Skills */
+.soft-skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Réduire l'espacement entre les compétences */
+    margin-top: 20px;
+    padding: 0 10px;
+    align-items: center; /* Centrer les éléments pour un look plus propre */
+}
+
+/* Carte de chaque Soft Skill */
+.soft-skill {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Réduire l'espace entre l'icône et le texte */
+    font-size: 1rem; /* Réduire la taille du texte */
+    color: #555;
+    background: #fff;
+    padding: 8px 20px; /* Réduire les espaces internes */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 550px; /* Limiter la largeur de chaque élément */
+    width: 100%; /* S'assurer que les éléments ne débordent pas */
+}
+
+.soft-skill:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.soft-skill i {
+    color: #d48700;
+    font-size: 1.4em; /* Réduire la taille des icônes */
+}
+
+/* Barre de progression */
+.progress-bar {
+    width: 100%;
+    background: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 6px; /* Réduire la hauteur de la barre */
+    margin-top: 5px; /* Réduire l'espacement entre le texte et la barre */
+}
+
+.progress {
+    height: 100%;
+    background: #d48700;
+    width: 0; /* valeur dynamique */
+    border-radius: 5px;
+    transition: width 1s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .soft-skills-list {
+        align-items: center;
+        padding: 0 5px;
+    }
+
+    .soft-skill {
+        font-size: 0.9rem; /* Réduire encore plus la taille du texte sur mobile */
+        padding: 6px 15px; /* Réduire les espaces internes */
+    }
+
+    .soft-skill i {
+        font-size: 1.2em; /* Réduire encore la taille des icônes sur mobile */
+    }
+}
+
 .skills-list {
     display: flex;
     justify-content: center;
@@ -331,7 +411,7 @@ body {
 }
 
 .skill-icon.large-icon {
-    width: 120px; /* Agrandissement pour PostgreSQL */
+    width: 120px;
 }
 
 .skill-card:hover .skill-icon {
@@ -345,7 +425,6 @@ body {
     font-weight: 500;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .skills-container {
         flex-direction: column;
@@ -357,7 +436,6 @@ body {
     }
 }
 
-/* Section Projets */
 .project-section {
     text-align: center;
     padding: 4rem 2rem;
@@ -370,13 +448,17 @@ body {
     color: #f0a500;
 }
 
+.project-section h3 {
+    text-align: center;
+}
+
 .project-section p {
     font-size: 1.2rem;
     margin-bottom: 3rem;
     color: #555;
+    text-align: justify;
 }
 
-/* Container des cartes de projet */
 .project-container {
     display: flex;
     flex-wrap: wrap;
@@ -384,7 +466,6 @@ body {
     gap: 2rem;
 }
 
-/* Carte de projet */
 .project-card {
     background-color: #fff;
     border-radius: 12px;
@@ -394,21 +475,19 @@ body {
     transition: transform 0.3s ease;
     justify-content: space-between;
     position: relative;
-    padding-bottom: 4rem; /* Ajout d’espace en bas pour le texte */
+    padding-bottom: 4rem;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
 }
 
-/* Image de la carte */
 .project-card img {
     width: 100%;
     height: 180px;
     object-fit: cover;
 }
 
-/* Détails de la carte */
 .project-details {
     padding: 1.5rem;
     text-align: left;
@@ -427,7 +506,6 @@ body {
     margin-bottom: 1.5rem;
 }
 
-/* Liens vers les projets */
 .project-links {
     display: flex;
     gap: 1rem;
@@ -453,7 +531,6 @@ body {
     color: #f0a500;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .project-container {
         flex-direction: column;
@@ -461,10 +538,6 @@ body {
     }
 }
 
-
-
-
-/* Section footer */
 .footer-section {
     background-color: #333;
     color: #fff;
@@ -483,7 +556,6 @@ body {
     color: #ccc;
 }
 
-/* Liens vers les réseaux sociaux */
 .social-links {
     display: flex;
     justify-content: center;
@@ -497,12 +569,10 @@ body {
     transition: transform 0.3s ease;
 }
 
-/* Effet au survol */
 .social-icon:hover img {
     transform: scale(1.2);
 }
 
-/* Bas de page */
 .footer-bottom {
     border-top: 1px solid #444;
     padding-top: 1rem;
@@ -533,7 +603,6 @@ body {
     }
 }
 
-/* Effet d'apparition avec l'animation */
 @keyframes slideIn {
     to {
         transform: translateY(0);
@@ -541,7 +610,6 @@ body {
     }
 }
 
-/* Responsive (mobile) */
 @media (max-width: 768px) {
     .navbar-links {
         display: none;
@@ -550,7 +618,7 @@ body {
         position: absolute;
         top: 60px;
         left: 0;
-        background: rgba(0, 0, 0, 0.9); /* Fond plus sombre pour mobile */
+        background: rgba(0, 0, 0, 0.9);
     }
 
     .navbar-links li {
@@ -574,7 +642,6 @@ body {
         margin: 4px;
     }
 
-    /* Afficher les liens lorsque la case est cochée */
     .menu-toggle:checked + .navbar-icon + .navbar-links {
         display: flex;
     }

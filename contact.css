@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: transparent;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: none;
+    border-bottom: none;
+    transition: background 0.3s ease;
+}
+
+.navbar.transparent {
+    background-color: #444;
+    box-shadow: none;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-logo a {
+    color: #ffffff; 
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+}
+
+.navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 400;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-links a.active {
+    color: #f0a500;
+    font-weight: bold;
+    position: relative;
+}
+
+.navbar-links a.active::after {
+    content: ""; 
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: #f0a500;
+}
+
+.navbar-links a:hover {
+    color: #f0a500;
+}
+
+.navbar-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: #f0a500;
+    transition: width 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.navbar-icon {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: rgba(0, 0, 0, 0.9);
+    }
+
+    .navbar-links li {
+        margin: 1rem 0;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .navbar-icon {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .navbar-icon span {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 4px;
+    }
+
+    .menu-toggle:checked + .navbar-icon + .navbar-links {
+        display: flex;
+    }
+}
+
+
+
+.contact-section {
+    padding: 100px 20px 40px; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    background-color: #fff;
+}
+
+.contact-info {
+    flex: 1;
+    max-width: 500px;
+    padding: 1.5rem;
+}
+
+.contact-info h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.contact-details {
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-item p {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 0;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: #f0a500;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #f0a500;
+}
+
+.contact-form {
+    flex: 1;
+    max-width: 600px;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.contact-form h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.btn-submit {
+    padding: 12px 20px;
+    background-color: #f0a500;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #d48700;
+}
+
+.map {
+    flex: 1;
+    max-width: 600px;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.map iframe {
+    width: 100%;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info, .contact-form, .map {
+        max-width: 100%;
+    }
+}
