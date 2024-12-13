@@ -280,9 +280,9 @@ body {
 }
 
 .g-recaptcha .g-recaptcha-response {
-    border: 2px solid #ddd; /* Bordure par défaut */
+    border: 2px solid #ddd;
 }
 
 .g-recaptcha .g-recaptcha-response:invalid {
-    border: 2px solid red; /* Bordure rouge si non validé */
+    border: 2px solid red;
 }
