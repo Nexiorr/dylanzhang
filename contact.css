@@ -278,3 +278,11 @@ body {
         max-width: 100%;
     }
 }
+
+.g-recaptcha .g-recaptcha-response {
+    border: 2px solid #ddd; /* Bordure par défaut */
+}
+
+.g-recaptcha .g-recaptcha-response:invalid {
+    border: 2px solid red; /* Bordure rouge si non validé */
+}
