@@ -165,10 +165,10 @@ body {
 }
 
 .portrait {
-    width: 200px;
-    height: 200px;
+    width: 222px;
+    height: 236px;
     border-radius: 50%;
-    border: 5px solid #d5d5d5;
+    border: 2px solid #d5d5d5;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
